@@ -1,0 +1,287 @@
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until shared.GuiLibrary
+local uis = game:GetService("UserInputService")
+local GuiLibrary = shared.GuiLibrary
+local ScriptSettings = {}
+local UIS = game:GetService("UserInputService")
+local COB = function(tab, argstable) 
+	return GuiLibrary["ObjectsThatCanBeSaved"][tab.."Window"]["Api"].CreateOptionsButton(argstable)
+end
+function securefunc(func)
+	task.spawn(function()
+		spawn(function()
+			pcall(function()
+				loadstring(
+					func()
+				)()
+			end)
+		end)
+	end)
+end
+function warnnotify(title, content, duration)
+	local frame = GuiLibrary["CreateNotification"](title or "", content or "(No Content Given)", duration or 5, "assets/WarningNotification.png")
+	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
+end
+function infonotify(title, content, duration)
+	local frame = GuiLibrary["CreateNotification"](title or "", content or "(No Content Given)", duration or 5, "assets/InfoNotification.png")
+	frame.Frame.Frame.ImageColor3 = Color3.fromRGB(255, 64, 64)
+end
+function getstate()
+	local ClientStoreHandler = require(game.Players.LocalPlayer.PlayerScripts.TS.ui.store).ClientStore
+	return ClientStoreHandler:getState().Game.matchState
+end
+function iscustommatch()
+	local ClientStoreHandler = require(game.Players.LocalPlayer.PlayerScripts.TS.ui.store).ClientStore
+	return ClientStoreHandler:getState().Game.customMatch
+end
+function checklagback()
+	local hrp = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+	return isnetworkowner(hrp)
+end
+
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Text = " made by ak_perry "
+GuiLibrary["MainGui"].ScaledGui.ClickGui.Version.Position = UDim2.new(1, -175 - 20, 1, -25)
+infonotify("cutome made by ak_perry v1")
+
+
+
+local crashsever = COB("Utility", {
+    ["Name"] = "crashsever",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+               while wait(0.6) do --// don't change it's the best
+game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+local function getmaxvalue(val)
+   local mainvalueifonetable = 499999
+   if type(val) ~= "number" then
+       return nil
+   end
+   local calculateperfectval = (mainvalueifonetable/(val+2))
+   return calculateperfectval
+end
+
+local function bomb(tableincrease, tries)
+local maintable = {}
+local spammedtable = {}
+
+table.insert(spammedtable, {})
+z = spammedtable[1]
+
+for i = 1, tableincrease do
+    local tableins = {}
+    table.insert(z, tableins)
+    z = tableins
+end
+
+local calculatemax = getmaxvalue(tableincrease)
+local maximum
+
+if calculatemax then
+     maximum = calculatemax
+     else
+     maximum = 999999
+end
+
+for i = 1, maximum do
+     table.insert(maintable, spammedtable)
+end
+
+for i = 1, tries do
+     game.RobloxReplicatedStorage.SetPlayerBlockList:FireServer(maintable)
+end
+end
+
+bomb(250, 2) --// change values if client crashes.
+end
+            end)
+        end
+    end,
+    ["Default"] = false,
+    ["HoverText"] = "crash the whole sever kinda pacth"
+})
+
+local rektsky = COB("World", {
+    ["Name"] = "rektsky",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/8pmX8/rektsky4roblox/main/mainscript.lua"))()
+            end)
+        end
+    end,
+    ["Default"] = false,
+    ["HoverText"] = "script for bedwars really good"
+})
+
+local infiniteyield = COB("World", {
+    ["Name"] = "infiniteyield",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+                loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+            end)
+        end
+    end,
+    ["Default"] = false,
+    ["HoverText"] = "script it's ez to ues"
+})
+
+local engoware = COB("World", {
+    ["Name"] = "engoware",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+               loadstring(game:HttpGet("https://raw.githubusercontent.com/joeengo/engoware/main/Main.lua"))()
+            end)
+        end
+    end,
+    ["Default"] = false,
+    ["HoverText"] = "for bedwars"
+})
+
+local cutomefly = COB("Utility", {
+    ["Name"] = "fastgravityfly",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+                game:GetService("Workspace").Gravity = 0
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+    		ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 0
+             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 21.45
+            end)
+    else
+			pcall(function()
+				ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 196.2
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Normal
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "Gravity fly but fast"
+})
+
+
+
+local cutomespeed = COB("Render", {
+    ["Name"] = "cutomespeed",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22.4
+    		ScriptSettings.CustomFly = false
+            end)
+    else
+			pcall(function()
+				ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 196.2
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Normal
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "speedbutcutome"
+})
+
+
+
+local CustomAntivoid = COB("World", {
+	["Name"] = "CustomAntivoid",
+	["Function"] = function(callback)
+		if callback then
+			pcall(function()
+				ScriptSettings.CustomAntivoid = true
+				--repeat task.wait(0.3) until getstate() == 1
+				local part = Instance.new("Part")
+				part.Name = "AVOID_PART"
+				part.Anchored = true
+				part.Color = Color3.fromRGB(255,65,65)
+				part.Size = Vector3.new(5000,3,5000)
+				part.Parent = game:GetService("Workspace")
+				part.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame - Vector3.new(0,20,0)
+				ScriptSettings.CustomAntivoid_Part = part
+				part.Touched:Connect(function(v)
+					if v.Parent:FindFirstChild("Humanoid") and v.Parent.Parent.Name == game:GetService("Players").LocalPlayer.Name and not v.Parent:FindFirstChild("Humanoid").Health == 0 then
+						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+						task.wait(0.12)
+						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+						task.wait(0.12)
+						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+						task.wait(0.12)
+						game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+						--[[
+							local tptimes = 0
+							repeat
+								task.wait()
+								tptimes = tptimes + 1
+								game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame / 2
+							until tptimes = 10
+						]]--
+					end
+				end)
+			end)
+		else
+			pcall(function()
+				ScriptSettings.CustomAntivoid = false
+				ScriptSettings.CustomAntivoid_Part:Destroy()
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "fastfly pacthed ): "
+})
+local cutomefly = COB("Blatant", {
+    ["Name"] = "skywaresfly",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+                game:GetService("Workspace").Gravity = 0
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 28
+    		ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 0
+            end)
+    else
+			pcall(function()
+				ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 196.2
+			    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Normal
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "skywares fly"
+})
+
+local cutomefly = COB("Utility", {
+    ["Name"] = "longfly",
+    ["Function"] = function(callback)
+        if callback then
+            pcall(function()
+                game:GetService("Workspace").Gravity = 0
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20
+    		ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 0
+             game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22.2
+             wait(0.27) game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20.1
+            end)
+    else
+			pcall(function()
+				ScriptSettings.CustomFly = false
+				game:GetService("Workspace").Gravity = 196.2
+			game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Normal
+			end)
+		end
+	end,
+	["Default"] = false,
+	["HoverText"] = "long fly really good "
+})
+
+local player = game.Players.localPlayer
+
+if player.Name == "" then 
+print ("WhiteListed")
+else
+player:kick("not" .. "WhiteListed")
+end
